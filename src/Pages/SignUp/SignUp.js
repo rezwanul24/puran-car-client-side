@@ -59,11 +59,11 @@ const SignUp = () => {
                 .then(data => {
                   localStorage.setItem("token", data.token);
                   console.log(data);
-                  toast.message("User Created Successfully.");
+                  toast.success("User Created Successfully. with token");
                   //navigate(from, { replace: true });
                 });
             }
-            toast.message("User Created Successfully.");
+            toast.success("User Created Successfully.");
             navigate(from, { replace: true });
           })
           .catch(err => {

@@ -171,7 +171,7 @@ const SingleBike = ({ bike }) => {
       <div className="card lg:card-side bg-base-100 shadow-xl">
         <figure>
           <img
-            className="w-[300px] h-[300px] mx-auto rounded-lg"
+            className="w-[300px] h-[200px] mx-auto rounded-lg"
             src={img}
             alt="Album"
           />

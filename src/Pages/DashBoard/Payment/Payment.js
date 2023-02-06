@@ -4,7 +4,9 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CheckForm from "./CheckForm";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
+const stripePromise = loadStripe(
+  "pk_test_51MY6JgLIuPmrFwujBpVMg8h95YZJoUiKs9Q6F9dXqucNp0ZYGBZizdX58PXvwByV1XtppoMR42Zr94DhDgOsJ5is00bITuKZzt"
+);
 
 const Payment = () => {
   const { id } = useParams();
@@ -29,7 +31,7 @@ const Payment = () => {
           Payment <span className="text-primary">Now</span>
         </span>
       </h1>
-      <h2 className="text-2xl text-center my-5 text-accent">
+      <h2 className="text-2xl text-center my-5">
         Hello {booking?.buyerName},<br /> You want to buy this products
       </h2>
       <div className="w-11/12 mx-auto pb-10">
