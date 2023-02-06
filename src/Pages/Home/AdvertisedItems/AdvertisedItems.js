@@ -13,7 +13,9 @@ const AdvertisedItems = () => {
   const { data: adsData = [], isLoading } = useQuery({
     queryKey: ["getAdvertise"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/getAdvertise");
+      const res = await fetch(
+        "https://puran-car-server-side.vercel.app/getAdvertise"
+      );
       const data = await res.json();
       return data;
     },

@@ -47,7 +47,7 @@ const SingleBike = ({ bike }) => {
       pay: "UnPaid",
     };
 
-    fetch("http://localhost:5000/addBooking", {
+    fetch("https://puran-car-server-side.vercel.app/addBooking", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -78,7 +78,7 @@ const SingleBike = ({ bike }) => {
       buyerName: user?.displayName,
     };
 
-    fetch("http://localhost:5000/addReport", {
+    fetch("https://puran-car-server-side.vercel.app/addReport", {
       method: "POST",
       headers: {
         "content-type": "application/json",

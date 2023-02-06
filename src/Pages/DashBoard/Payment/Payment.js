@@ -15,7 +15,7 @@ const Payment = () => {
   console.log(id);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/singleBooking/${id}`)
+    fetch(`https://puran-car-server-side.vercel.app/singleBooking/${id}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);

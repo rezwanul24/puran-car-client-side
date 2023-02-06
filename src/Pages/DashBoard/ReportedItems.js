@@ -9,7 +9,7 @@ const ReportedItems = () => {
   const [tableData, setTableData] = useState([]);
 
   const getData = () => {
-    fetch(`http://localhost:5000/getReport`)
+    fetch(`https://puran-car-server-side.vercel.app/getReport`)
       .then(res => res.json())
       .then(data => setTableData(data));
   };
@@ -19,7 +19,7 @@ const ReportedItems = () => {
 
   const handleRemoveReport = id => {
     console.log(id);
-    fetch(`http://localhost:5000/removeReport/${id}`, {
+    fetch(`https://puran-car-server-side.vercel.app/removeReport/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -40,7 +40,7 @@ const ReportedItems = () => {
   };
 
   const handleRemovePost = (id, productId) => {
-    fetch(`http://localhost:5000/removePost/${id}`, {
+    fetch(`https://puran-car-server-side.vercel.app/removePost/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

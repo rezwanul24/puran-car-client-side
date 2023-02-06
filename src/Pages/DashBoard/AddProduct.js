@@ -44,7 +44,7 @@ const AddProduct = () => {
 
       console.log(productData);
 
-      fetch("http://localhost:5000/addProduct", {
+      fetch("https://puran-car-server-side.vercel.app/addProduct", {
         method: "POST",
         headers: {
           "content-type": "application/json",

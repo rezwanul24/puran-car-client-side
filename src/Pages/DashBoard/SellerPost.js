@@ -13,7 +13,7 @@ const SellerPost = () => {
   const getData = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/myProduct?email=${user?.email}`
+        `https://puran-car-server-side.vercel.app/myProduct?email=${user?.email}`
       );
       setTableData(response.data);
     } catch (error) {
@@ -26,7 +26,7 @@ const SellerPost = () => {
 
   const handleDelete = id => {
     console.log(id);
-    fetch(`http://localhost:5000/deleteAdvertise/${id}`, {
+    fetch(`https://puran-car-server-side.vercel.app/deleteAdvertise/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -52,7 +52,7 @@ const SellerPost = () => {
     if (user?.email) {
       const updateDate = { ads: true };
 
-      fetch(`http://localhost:5000/addAdvertise/${id}`, {
+      fetch(`https://puran-car-server-side.vercel.app/addAdvertise/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
@@ -79,7 +79,7 @@ const SellerPost = () => {
     if (user?.email) {
       const updateDate = { ads: false };
 
-      fetch(`http://localhost:5000/addAdvertise/${id}`, {
+      fetch(`https://puran-car-server-side.vercel.app/addAdvertise/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

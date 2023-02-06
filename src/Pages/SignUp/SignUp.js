@@ -48,13 +48,16 @@ const SignUp = () => {
             console.log(loginData);
 
             if (user?.uid) {
-              fetch(`http://localhost:5000/user/${user?.email}`, {
-                method: "PUT",
-                headers: {
-                  "content-type": "application/json",
-                },
-                body: JSON.stringify(loginData),
-              })
+              fetch(
+                `https://puran-car-server-side.vercel.app/user/${user?.email}`,
+                {
+                  method: "PUT",
+                  headers: {
+                    "content-type": "application/json",
+                  },
+                  body: JSON.stringify(loginData),
+                }
+              )
                 .then(res => res.json())
                 .then(data => {
                   localStorage.setItem("token", data.token);
@@ -88,13 +91,16 @@ const SignUp = () => {
             role: "buyer",
             isSellerVerify: false,
           };
-          fetch(`http://localhost:5000/user/${user?.email}`, {
-            method: "PUT",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(loginData),
-          })
+          fetch(
+            `https://puran-car-server-side.vercel.app/user/${user?.email}`,
+            {
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(loginData),
+            }
+          )
             .then(res => res.json())
             .then(data => {
               localStorage.setItem("token", data.token);

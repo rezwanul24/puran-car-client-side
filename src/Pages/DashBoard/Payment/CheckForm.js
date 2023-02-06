@@ -17,7 +17,7 @@ const CheckForm = ({ booking }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://puran-car-server-side.vercel.app/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -85,7 +85,7 @@ const CheckForm = ({ booking }) => {
         name: buyerName,
         price: parseInt(price),
       };
-      fetch(`http://localhost:5000/payments/${_id}`, {
+      fetch(`https://puran-car-server-side.vercel.app/payments/${_id}`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

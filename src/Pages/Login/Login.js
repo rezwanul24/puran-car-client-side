@@ -29,12 +29,15 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         if (user?.email) {
-          fetch(`http://localhost:5000/jwt?email=${user?.email}`, {
-            method: "GET",
-            headers: {
-              "content-type": "application/json",
-            },
-          })
+          fetch(
+            `https://puran-car-server-side.vercel.app/jwt?email=${user?.email}`,
+            {
+              method: "GET",
+              headers: {
+                "content-type": "application/json",
+              },
+            }
+          )
             .then(res => res.json())
             .then(fData => {
               setLoading(false);
@@ -69,13 +72,16 @@ const Login = () => {
             role: "buyer",
             isSellerVerify: false,
           };
-          fetch(`http://localhost:5000/user/${user?.email}`, {
-            method: "PUT",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify(loginData),
-          })
+          fetch(
+            `https://puran-car-server-side.vercel.app/user/${user?.email}`,
+            {
+              method: "PUT",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(loginData),
+            }
+          )
             .then(res => res.json())
             .then(data => {
               localStorage.setItem("token", data.token);
@@ -143,7 +149,7 @@ const Login = () => {
           </div>
         </form>
         <p>
-          New to Resale Bike{" "}
+          New to Puran Car{" "}
           <Link className="text-secondary" to="/signup">
             Create new Account
           </Link>

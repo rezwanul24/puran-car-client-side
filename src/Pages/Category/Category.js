@@ -15,7 +15,7 @@ const Category = () => {
     queryKey: ["allBikes"],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/allBikes?category=${name}`
+        `https://puran-car-server-side.vercel.app/allBikes?category=${name}`
       );
       const data = await res.json();
       return data;
@@ -23,7 +23,7 @@ const Category = () => {
   });
 
   // useEffect(() => {
-  //     fetch(`http://localhost:5000/allBikes?category=${name}`)
+  //     fetch(`https://puran-car-server-side.vercel.app/allBikes?category=${name}`)
   //         .then(res => res.json())
   //         .then(data => setBikes(data))
   // }, [user?.uid])
